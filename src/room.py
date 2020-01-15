@@ -2,9 +2,10 @@
 # description attributes.
 
 class Room:
-	def __init__(self, name, description):
+	def __init__(self, name, description, items=[]):
 		self.name = name
 		self.description = description
+		self.items = items
 		self.n_to = self
 		self.e_to = self
 		self.s_to = self
@@ -13,5 +14,5 @@ class Room:
 		new_room = self.__getattribute__(direction)
 		if new_room == self:
 			print("\nYou can't go that way!\n")
-
 		return new_room
+	
