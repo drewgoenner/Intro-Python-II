@@ -6,6 +6,12 @@ class Player:
 		self.name = name
 		self.current_room = current_room
 		self.inventory = inventory
+		for item in self.inventory:
+			if item is isinstance('item', LightSource):
+				# self.current_room.is_light=True
+				print("True")
+			else:
+				print("False")
 	def take(self, item):
 		if item in self.current_room.items:
 			item.on_take()
